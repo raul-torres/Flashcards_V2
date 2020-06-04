@@ -1,0 +1,88 @@
+
+body{
+    height: 70vh;
+    background-image: url("../img/absnew.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.left{
+    height: 95vh;
+}
+.mid{
+    height: 95vh;
+    margin-left: 7em;
+}
+.attribute{
+    font-size: small;
+    text-decoration: none;
+}
+.area{
+    background-color: rgba(0, 0, 0, 0.164);
+    border: 2px solid black;
+    color: white;
+}
+.area:focus{
+    background-color: rgba(0, 0, 0, 0.164);
+    color: white;
+}
+.area::after{
+    color: white;
+}
+.area::placeholder{
+    font-style: italic;
+    color: white;
+}
+.main{
+    width: 22vh;
+}
+.validation{
+    color: red;
+    font-size: small;
+}
+.icon1{
+    width: 20vh;
+}
+.under{
+    background-color: rgba(0, 0, 0, 0.164);
+    margin-left: 4%;
+    height: 50vh;
+    color: white;
+}
+
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 3em;
+}
+.logo{
+    width: 7em !important;
+}
+.mainBody{
+    overflow-x: hidden;
+}
+.break{
+    margin-top: 10em;
+}
+@media only screen and (max-width: 768px){
+    .under{
+        margin-left: 0;
+    }
+    .mid{
+        height: 35vh;
+        margin-left: 3em;
+    }
+    .navbar{
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .break{
+        margin-top: -10em;
+    }
+    .mid{
+        margin-left: 0em;
+    }
+}

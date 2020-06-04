@@ -1,0 +1,81 @@
+
+body{
+    height: 100vh;
+    background-image: url("../img/absnew.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
+.left{
+    margin-left: 8%;
+}
+.mid{
+    text-shadow: 1px 1px black;
+    margin-left: 2%;
+}
+.logo{
+    width: 7em;
+}
+.attribute{
+    font-size: small;
+    text-decoration: none;
+}
+.area{
+    background-color: rgba(0, 0, 0, 0.164);
+    border: 2px solid black;
+    color: white;
+}
+.area:focus{
+    background-color: rgba(0, 0, 0, 0.164);
+    color: white;
+}
+.area::after{
+    color: white;
+}
+.area::placeholder{
+    font-style: italic;
+    color: black;
+}
+.validation{
+    color: red;
+    font-size: small;
+    font-style: italic;
+}
+.name{
+    color: #6C63FF;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 3em;
+}
+.mainBody{
+    overflow-x: hidden;
+}
+.lets{
+    margin-top: 28%;
+}
+@media only screen and (max-width: 768px){
+    .navbar{
+        height: auto;
+    }
+    .mainBody{
+        overflow-x: hidden;
+    }
+}
+@media only screen and (max-width: 600px){
+    .lets{
+        margin-top: auto;
+    }
+    .left{
+        margin-left: auto;
+    }
+    .mid{
+        margin-left: auto;
+    }
+    .mainBody{
+        overflow-x: hidden;
+    }
+}

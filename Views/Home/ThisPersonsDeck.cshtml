@@ -1,0 +1,96 @@
+@model Deck
+<link rel="stylesheet" href="~/css/ThisPersonsDeck.css">
+
+<div class="varela">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light varela">
+    <a class="main out nav-link" href="/home">
+      <img src="~/img/whiteLogo.png" alt="" class="logo">
+    </a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="out nav-link" href="/newdeck">New Deck</a>
+      </li>
+      <li class="nav-item">
+        <a class="out nav-link" href="/alldecks">My Decks</a>
+      </li>
+      <li class="nav-item">
+        <a class="out nav-link" href="/quiz">Quiz</a>
+      </li>
+      <li class="nav-item active">
+        <a class="active nav-link" href="/everysingledeck">Back to Other Decks</a>
+      </li>
+    </ul>
+    <a href="/logout" class="text-right out">Sign Out</a>
+    @*  <span class="sr-only">(current)</span> *@
+</nav>
+<br>
+<p class="text-center varela">
+    @* <a href="/thispersonsdeck/@ViewBag.DeckId" class="return">&#8592; Go Back</a> *@
+    <a href='javascript:history.go(-1)' class="return">Go Back</a>
+  </p>
+
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="display-4 text-center name">@Model.DeckName.ToUpper()</h1>
+            <hr>
+            <p class="text-center creator">Created by: @Model.Creator.FirstName @Model.Creator.LastName</p>
+            <p class="text-center creator">Number of Cards in Deck: @Model.Flashcards.Count</p>
+            @{
+              bool isFav1 = false;
+                  foreach(var x in Model.FavoriteBy)
+                  {
+                    if(x.UserId == ViewBag.User)
+                    {
+                      isFav1 = true;
+                    }
+                  }
+                  if(isFav1 == true)
+                  {
+                    <p class="text-center">
+                      <img src="~/img/star.png" alt="Star" class="star">
+                    </p>
+                  }
+            }
+            @* <p class="text-center">Create On: @ViewBage.ThisDeck.CreatedAt</p> *@
+            <br>
+            <p class="desc text-center">@Model.Description</p>
+            @{
+              if(Model.Description == null)
+              {
+                <p class="desc text-center">No Description Avaliable</p>
+              }
+            }
+        </div>
+        <div class="col-md-5 text-center">
+            <br>
+            <br>
+            <br>
+            <div class="menu">
+                <h1 class="title">Menu</h1>
+                <hr class="smallhr">
+                <a href="/usercards/@Model.DeckId" class="options">View Cards</a>
+                <br>
+                <br>
+                <a href="#" class="options">Quiz</a>
+                <br>
+                <br>
+                @{
+                  bool isFav = false;
+                  foreach(var x in Model.FavoriteBy)
+                  {
+                    if(x.UserId == ViewBag.User)
+                    {
+                      isFav = true;
+                    }
+                  }
+                  if(isFav == true)
+                  {
+                    <a href="/unfav/@Model.DeckId" class="options">Unfavorite</a>
+                  } else {
+                    <a href="/fav/@Model.DeckId" class="options">Favorite</a>
+                  }
+                }
+            </div>
+        </div>
+    </div>
+</div>

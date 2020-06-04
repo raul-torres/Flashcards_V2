@@ -1,0 +1,57 @@
+@* TECHNOLOGIES USED BY VIEW *@
+<link rel="stylesheet" href="~/css/BeginQuiz.css">
+
+@* PAGE NAVBAR *@
+<nav class="navbar navbar-expand-lg navbar-light bg-light varela">
+    <a class="main out nav-link" href="/home">
+      <img src="~/img/whiteLogo.png" alt="" class="logo">
+    </a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="out nav-link" href="/newdeck">New Deck</a>
+      </li>
+      <li class="nav-item">
+        <a class="out nav-link" href="/alldecks">My Decks</a>
+      </li>
+      <li class="nav-item">
+        <a class="active nav-link" href="/quiz">Quiz</a>
+      </li>
+      <li class="nav-item active">
+        <a class="out nav-link" href="/everysingledeck">Other Decks</a>
+      </li>
+    </ul>
+    <a href="/logout" class="text-right out">Sign Out</a>
+</nav>
+
+<div class="varela">
+    <div class="row">
+        <div class="col-md-4"></div>
+
+        @* SHOWING A CARD *@
+        <div class="mainCol col-md-4 text-center">
+            <div class="jumbotron ThisCard">
+                <p class="marQues field">QUESTION:</p>
+                <p class="response">lbfjblsample</p>
+                <p class="field">ANSWER:</p>
+                <p class="response blackLine">jbdshklhbvsample</p>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="#">
+                            <img src="~/img/up.png" alt="Thumbs Up" class="opts">
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#">
+                            <img src="~/img/down.png" alt="Thumbs Down" class="opts">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4"></div>
+    </div>
+</div>
+

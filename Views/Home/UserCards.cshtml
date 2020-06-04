@@ -1,0 +1,60 @@
+@model List<Card>
+<link rel="stylesheet" href="~/css/UserCards.css">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light varela">
+    <a class="main out nav-link" href="/home">
+      <img src="~/img/whiteLogo.png" alt="" class="logo">
+    </a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="out nav-link" href="/newdeck">New Deck</a>
+      </li>
+      <li class="nav-item">
+        <a class="out nav-link" href="/alldecks">My Decks</a>
+      </li>
+      <li class="nav-item">
+        <a class="out nav-link" href="/quiz">Quiz</a>
+      </li>
+      <li class="nav-item active">
+        <a class="active nav-link" href="/everysingledeck">Other Decks</a>
+      </li>
+    </ul>
+    <a href="/logout" class="text-right out">Sign Out</a>
+    @*  <span class="sr-only">(current)</span> *@
+</nav>
+
+<div class="varela">
+  <br>
+  <p class="text-center">
+    @* <a href="/thispersonsdeck/@ViewBag.DeckId" class="return">&#8592; Go Back</a> *@
+    <a href='javascript:history.go(-1)' class="return">Go Back</a>
+  </p>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+        
+          @{
+          if(Model.Count == 0)
+          {
+            <br>
+            <br>
+            <br>
+            <p class="text-center nocards">This deck doesn't have any cards</p>
+          }
+          foreach(Card C in Model)
+          {
+              <div class="jumbotron ThisCard">
+                  <p class="field">QUESTION:</p>
+                  <p class="response">@C.Question</p>
+                  <p class="field">ANSWER:</p>
+                  <p class="response">@C.Answer</p>
+              </div>
+          }
+      }
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+</div>

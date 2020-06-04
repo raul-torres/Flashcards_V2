@@ -1,0 +1,145 @@
+body{
+    min-height: 100vh;
+    background: rgb(94,136,242);
+    background: linear-gradient(0deg, rgba(94,136,242,1) 4%, rgba(146,186,237,1) 47%, rgba(161,215,235,1) 100%);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.logo{
+    width: 100%;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.164) !important;
+    height: 9vh;
+
+}
+.active{
+    color: red !important;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: large;
+}
+    .active:hover{
+        color: blanchedalmond !important;
+    }
+.out{
+    text-decoration: none;
+    color: white !important;
+    transition: 0.5s;
+    font-size: large;
+}
+    .out:hover{
+        color: red !important;
+    }
+.main{
+    width: 22vh;
+}
+    a.navbar-brand {
+        white-space: normal;
+        text-align: center;
+        word-break: break-all;
+        width: 50%;
+      }
+    
+    .menupic{
+        width: 16%;
+      }
+          .menupic2{
+            width: 20%;
+            margin-left: 1%;
+          }
+          .menupic3{
+            width: 6%;
+          }
+        
+    .jumbotron{
+        height: 45vh;
+        width: 35vh;
+        background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),  url("../img/redt.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        color: white;
+        border: 2px solid black;
+    }
+    .ThisCard{
+        display: inline-block;
+        margin-top: 5%;
+        margin-left: 8%;
+        overflow-y: auto;
+        transition: 0.4s ease-out;
+        position: relative;
+        padding: 1rem 1rem;
+    }
+        .ThisCard:hover {
+            transform: translateY(-20px);
+            transition: 0.4s ease-out;
+        }
+        .ThisCard:hover ~ .ThisCard {
+            position: relative;
+            transition: 0.4s ease-out;
+          }
+        .ThisCard:first-child{
+            margin-left: 8%;
+        }
+        .ThisCard::-webkit-scrollbar
+        {
+            width: 6px;
+            background-color: #000000;
+        }
+    
+        .ThisCard::-webkit-scrollbar-thumb
+        {
+            background-color: #ffffff;
+        }
+    .field{
+      font-family: 'Open Sans Condensed';
+      font-weight: 700;
+      font-size: 25px;
+        color: #6C63FF;
+    }
+    .response{
+        font-family: 'Open Sans Condensed';
+        font-size: 18px;
+        margin-left: 10%;
+    }
+    .options a{
+        display: inline;
+    }
+        .options a:first-child{
+            margin-right: 72%;
+            margin-left: 4%;
+    
+        }
+    
+    .trashIcon{
+        width: 11%;
+    }
+    .editIcon{
+        width: 11%;
+    }
+.nocards{
+    font-size: x-large;
+}
+.newbtn{
+    background-color: rgba(0, 0, 0, 0.062);
+    color: black;
+    border: 1px solid black;
+}
+.newbtn:hover{
+    color: blue;
+    border: 1px solid blue;
+    background-color: rgba(0, 0, 0, 0.178);
+
+}
+.return{
+    font-weight: 500;
+    margin-left: 1vh;
+    transition: 0.3s;
+}
+    .return:hover{
+        color: black;
+        font-size: x-large; 
+    }
+    

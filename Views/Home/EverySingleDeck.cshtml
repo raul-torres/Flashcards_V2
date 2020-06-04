@@ -1,0 +1,71 @@
+@model List<Deck>
+
+<link rel="stylesheet" href="~/css/EverySingleDeck.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="~/img/whiteLogo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="text-light nav-item nav-link" href="/newdeck">New Deck</a>
+      <a class="text-light nav-item nav-link" href="/alldecks">My Decks</a>
+      <a class="text-light nav-item nav-link" href="/quiz">Quiz</a>
+      <a class="nav-item nav-link active" href="/everysingledeck">Other Decks <span class="sr-only">(current)</span></a>
+      <a class="text-danger nav-item nav-link" href="/logout">Sign Out</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mainBody">
+  @{
+    foreach(Deck D in Model)
+    {
+      if(D.UserId == ViewBag.CurrentUser)
+      {
+        break;
+      }
+      if(D.Shared == false)
+      {
+        break;
+      }
+      <br>
+      <br>
+      <div class="row varela">
+        <div class="col-md-2"></div>
+        <div class="col-md-9">
+          <a href="/thispersonsdeck/@D.DeckId" class="box">
+            <div class="rec">
+              <p class="name">@D.DeckName</p>
+              &nbsp;&nbsp;&nbsp;
+              <p class="creator">By, @D.Creator.FirstName @D.Creator.LastName</p>
+              <span class="float-right count">@D.Flashcards.Count Cards</span>
+              @{
+                bool isFav = false;
+                foreach(var y in D.FavoriteBy)
+                {
+                  if(y.UserId == ViewBag.CurrentUser)
+                  {
+                    isFav = true;
+                  }
+                }
+                if(isFav == true)
+                {
+                  <img src="~/img/star.png" alt="Star" class="star">
+                }
+              }
+              @if(@D.Description == null)
+              {
+                <p class="desc">No Description Avaliable</p>
+              }
+              <p class="desc">@D.Description</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    }
+  }
+</div>

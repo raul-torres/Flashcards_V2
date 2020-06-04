@@ -1,0 +1,84 @@
+body{
+    min-height: 100vh;
+    background: linear-gradient(128deg, rgba(236,247,249,1) 0%, rgba(186,219,224,1) 100%);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.mainBody{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.rec{
+    width: 90%;
+    min-height: 100%;
+    max-height: 100%;
+    color: white;
+    border: 1px solid black;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),  url("../img/redt.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 2vh;
+    border-radius: 6px;
+    overflow: auto;
+    transition: 0.4s ease-out;
+}
+    .rec::-webkit-scrollbar{
+        width: 1px;
+    }
+    .rec:hover {
+        transform: translateY(-20px);
+        transition: 0.4s ease-out;
+        text-decoration: wavy;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    }
+    .rec:hover ~ .rec {
+        position: relative;
+        transition: 0.4s ease-out;
+    }
+.name{
+    font-size: x-large;
+    font-weight: bold;
+    color: #6C63FF;
+    display: inline-block;
+}
+.creator{
+    color: #6C63FF;
+    display: inline-block;
+    font-size: small;
+    font-style: italic;
+}
+.desc{
+    font-size: medium;
+    font-style: italic;
+    font-weight: 100;
+}
+
+.star{
+    width: 2vh;
+}
+.box:hover{
+    text-decoration: none;
+}
+
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 3em;
+}
+.logo{
+    width: 7em !important;
+}
+@media only screen and (max-width: 600px){
+    .rec{
+        width: 100%;
+    }
+    .navbar{
+        height: auto;
+    }
+}
+@media only screen and (max-width: 768px){
+    .navbar{
+        height: auto;
+    }
+}

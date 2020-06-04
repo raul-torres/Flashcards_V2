@@ -1,0 +1,49 @@
+@model Deck
+
+<link rel="stylesheet" href="~/css/Edit.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="~/img/whiteLogo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="text-light nav-item nav-link" href="/newdeck">New Deck</a>
+      <a class="text-light nav-item nav-link active" href="/alldecks">My Decks <span class="sr-only">(current)</span></a>
+      <a class="text-light nav-item nav-link" href="/quiz">Quiz</a>
+      <a class="text-light nav-item nav-link" href="/everysingledeck">Other Decks</a>
+      <a class="text-danger nav-item nav-link" href="/logout">Sign Out</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mainBody row varela">
+    <div class="col-md-5 mid">
+        <h1 class="lets text-center display-4">Let's make some changed to your <span class="name">@Model.DeckName</span> deck!</h1>
+    </div>
+    <div class="col-md-5 left">
+        <br>
+        <form action="/makechanges/@Model.DeckId" method="post">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span class="validation" asp-validation-for="DeckName"></span>
+            <input asp-for="DeckName" class="form-control area" placeholder="Deck Name" value="@Model.DeckName">
+            <br>
+            <textarea asp-for="Description" class="form-control area" cols="30" rows="10">@Model.Description</textarea>
+            <br>
+            <div class="text-center">
+                <input type="submit" value="Save" class="btn btn-primary">
+                <a href="/thisdeck/@Model.DeckId" class="btn btn-warning">Cancel</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-1 right"></div>
+</div>

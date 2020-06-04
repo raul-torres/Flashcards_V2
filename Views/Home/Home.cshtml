@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="~/css/Home.css">
+<div class="mainBody">
+    <div class="top">
+        <div class="navbar">
+            <img src="~/img/whiteLogo.png" alt="" class="logo">
+            <a href="/logout" class="text-right out">Sign Out</a>
+        </div>
+        <div class="row varela">
+            <div class="col-md-6">
+                @* <img src="~/img/whiteLogo.png" alt="" class="logo"> *@
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 class="text-center welcome">Welcome Back <span class="color">@ViewBag.CurrentUser.FirstName</span>!</h1>
+                <h5 class="text-center welcome">What are you looking to do today?</h5>
+            </div>
+            <div class="col-md-6 text-right">
+                <br>
+                @* <a href="/logout" class="out">
+                    <p class="thisbtn btn btn-danger">Sign Out</p>
+                </a> *@
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="row varela">
+            <div class="col-md-3">
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="froot">
+                    <p class="text-center">
+                        <a href="/newdeck">
+                            <img src="~/img/new.png" alt="Icon" class="icon1">
+                            <p class="text-center">Create New Card Deck</p>
+                            </a>
+                        <p class="text-center desc">Create a new group of cards to practice and learn from.</p>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="text-center">
+                    <a href="/alldecks">
+                        <img src="~/img/all.png" alt="Icon" class="icon">
+                        <p class="text-center">My Card Decks</p>
+                        </a>
+                    <p class="text-center desc">Take a look at all the card decks that you have created. </p>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="text-center">
+                    <a href="/quiz" class="text-center">
+                        <img src="~/img/study.png" alt="Icon" class="icon">
+                        <p class="text-center">Quiz</p>
+                        </a>
+                    <p class="text-center desc">Begin stydying with some of the cards that you have just created.</p>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="text-center">
+                    <a href="/everysingledeck">
+                        <img src="~/img/other.png" alt="Icon" class="icon">
+                        <p class="text-center">Other Users Decks</p>
+                        </a>
+                    <p class="text-center desc end">Take a look at other user's card deck. Here you can practice with their cards and even save them to your library. </p>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

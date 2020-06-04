@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="~/css/ThisDeck.css">
+
+<div class="mainBody varela">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/home">
+      <img src="~/img/whiteLogo.png" alt="" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="text-light nav-item nav-link" href="/newdeck">New Deck</a>
+        <a class="nav-item nav-link active" href="/alldecks">My Decks <span class="sr-only">(current)</span></a>
+        <a class="text-light nav-item nav-link" href="/quiz">Quiz</a>
+        <a class="text-light nav-item nav-link" href="/everysingledeck">Other Decks</a>
+        <a class="text-danger nav-item nav-link" href="/logout">Sign Out</a>
+      </div>
+    </div>
+  </nav>
+    <br>
+    <p class="text-center">
+      <a href="/alldecks" class="return">&#8592; Go Back</a>
+    </p>
+    <div class="row">
+        <div class="col-md-7">
+            @{
+                <h1 class="display-4 text-center name">@ViewBag.ThisDeck.DeckName.ToUpper()</h1>
+                <hr>
+                <p class="text-center creator">Created by: @ViewBag.ThisDeck.Creator.FirstName @ViewBag.ThisDeck.Creator.LastName</p>
+                <p class="text-center creator">Number of Cards in Deck: @ViewBag.ThisDeck.Flashcards.Count</p>
+                  if(ViewBag.ThisDeck.Shared == true)
+                  {
+                    <p class="text-center creator green">Deck is Viewable by Other Users</p>
+                  } else {
+                    <p class="text-center creator green">Deck Not Viewable by Other Users</p>
+                  }
+                <br>
+                @* <p class="text-center">Create On: @ViewBage.ThisDeck.CreatedAt</p> *@
+                <br>
+                <p class="desc text-center">@ViewBag.ThisDeck.Description</p>
+                if(ViewBag.ThisDeck.Description == null)
+                {
+                 <p class="desc text-center">No Description Avaliable</p>
+                 <p class="desc text-center">@ViewBag.ThisDeck.Flashcards.Count</p>
+                }
+            }
+        </div>
+        <div class="col-md-5 text-center">
+            <br>
+            <br>
+            <br>
+            <div class="menu">
+                <h1 class="title">Menu</h1>
+                <hr class="smallhr">
+                <a href="/edit/@ViewBag.ThisDeck.DeckId" class="options">Edit</a>
+                <hr class="reghr">
+                <a href="/allcards/@ViewBag.ThisDeck.DeckId" class="options">View Cards</a>
+                <hr class="reghr">
+                @{
+                  if(ViewBag.ThisDeck.Shared == true)
+                  {
+                    <a href="/pri/@ViewBag.ThisDeck.DeckId" class="options private">Make Deck Private</a>
+                  } else if(ViewBag.ThisDeck.Shared == false) {
+                    <a href="/pub/@ViewBag.ThisDeck.DeckId" class="options public">Make Deck Public</a>
+                  }
+                }
+                <hr class="reghr">
+                <a href="/deletedeck/@ViewBag.ThisDeck.DeckId" class="options delete">Delete Deck</a>
+            </div>
+        </div>
+    </div>
+</div>

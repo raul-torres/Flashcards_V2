@@ -1,0 +1,94 @@
+body{
+    min-height: 100vh;
+    background: rgb(236,247,249);
+    background: linear-gradient(128deg, rgba(236,247,249,1) 0%, rgba(186,219,224,1) 100%);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.logo{
+    width: 100%;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.164) !important;
+    height: 9vh;
+
+}
+.active{
+    color: red !important;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: large;
+}
+    .active:hover{
+        color: blanchedalmond !important;
+    }
+.out{
+    text-decoration: none;
+    color: white !important;
+    transition: 0.5s;
+    font-size: large;
+    
+}
+    .out:hover{
+        color: red !important;
+    }
+.mainCol{
+    margin-top: 10vh;
+}
+.jumbotron{
+    height: 55vh;
+    width: 45vh;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),  url("../img/redt.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    border: 2px solid black;
+}
+.ThisCard{
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 8%;
+    overflow-y: auto;
+    transition: 0.4s ease-out;
+    position: relative;
+    padding: 1rem 1rem;
+}
+    .ThisCard::-webkit-scrollbar
+    {
+        width: 6px;
+        background-color: #000000;
+    }
+
+    .ThisCard::-webkit-scrollbar-thumb
+    {
+        background-color: #ffffff;
+    }
+.field{
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+    font-size: 25px;
+    color: #6C63FF;
+}
+.response{
+    font-family: 'Open Sans Condensed';
+    font-size: 18px;
+    margin-left: 10%;
+}
+.blackLine{
+    background-color: black;
+    border-radius: 20vh;
+    color: black;
+    transition: 0.8s;
+}
+    .blackLine:hover{
+        background-color: transparent;
+        color: white;
+    }
+.marQues{
+    margin-top: 7vh;
+}
+.opts{
+    width: 8vh;
+}

@@ -1,0 +1,51 @@
+@model List<Deck>
+
+<link rel="stylesheet" href="~/css/test.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="~/img/whiteLogo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="text-light nav-item nav-link" href="/newdeck">New Deck</a>
+      <a class="nav-item nav-link active" href="/alldecks">My Decks <span class="sr-only">(current)</span></a>
+      <a class="text-light nav-item nav-link" href="/quiz">Quiz</a>
+      <a class="text-light nav-item nav-link" href="/everysingledeck">Other Decks</a>
+      <a class="text-danger nav-item nav-link" href="/logout">Sign Out</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mainBody">
+  <a href="/alldecks" class="opt btn btn-outline-primary">My Decks</a>
+
+          <br>
+          <br>
+          <div class="row varela">
+          <div class="col-md-3"></div>
+          <div class="col-md-9">
+              <a href="/thispersonsdeck" class="box">
+              <div class="rec">
+                  <p class="name">DECK NAME</p>
+                  &nbsp;&nbsp;&nbsp;
+                  <p class="creator">By, FIRST AND LAST NAME</p>
+                  <span class="float-right count">10 Cards</span>
+                      <img src="~/img/star.png" alt="Star" class="star">
+                  <p class="desc">DESCRIPTION Lorem ipsum dolor sit amet consectetur adipisicing elit. A accusantium vero veniam reprehenderit assumenda? Eum asperiores vel autem quasi quis dolore.</p>
+            </div>
+          </a> 
+          </div>
+          </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p class="text-center nodecks varela">You haven't favorited any decks</p>
+    <p class="text-center">
+      <a href="/everysingledeck" class="new btn btn-outline-primary">View All Deck</a>
+    </p>
+</div>

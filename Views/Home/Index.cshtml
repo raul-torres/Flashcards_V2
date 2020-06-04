@@ -1,0 +1,56 @@
+﻿@model User
+
+<link rel="stylesheet" href="~/css/Index.css" />
+<link rel="stylesheet" href="~/js/Index.js">
+
+
+<div class="controlBody">
+    <div class="row">
+        <div class="col-md-6 leftSection">
+            <img src="~/img/whiteLogo.png" alt="" class="logo">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="info varela display-4">LEARN WHAT YOU NEED <br> <span class="color">CREATE</span>&rarr; <span class="color">MEMORIZE</span>&rarr;<br> <span class="color">RETAIN</span>&rarr;<span class="color">SHARE</span></p>
+            <br>
+            <br>
+            <p class="about varela">My Flash Cards is a modern web application used to study any material using flash cards. Take a moment to create and account and join our ever growing community.</p>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3 rightSide">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2>Create Account</h2>
+            <span class="varela">Or </span><a href="login" class="varela">sign in to your account</a>
+            <br>
+            <br>
+            <form action="usercreator" method="post">
+                <span asp-validation-for="FirstName" class="validations varela"></span>
+                <input type="text" class="form-control" placeholder="First Name" asp-for="FirstName">
+                <br>
+                <span asp-validation-for="LastName" class="validations varela"></span>
+                <input type="text" class="form-control" placeholder="Last Name" asp-for="LastName">
+                <br>
+                <span asp-validation-for="Email" class="validations varela"></span>
+                <input type="email" class="form-control" placeholder="Email" asp-for="Email">
+                <br>
+                <span asp-validation-for="Password" class="validations varela"></span>
+                <input type="password" class="form-control" placeholder="Password" asp-for="Password">
+                <br>
+                <span asp-validation-for="ConfirmPassword" class="validations varela"></span>
+                <input type="password" class="form-control" placeholder="Password" asp-for="ConfirmPassword">
+                <br>
+                <div class="text-center">
+                    <input type="submit" value="Sign Up" class="btn btn-primary varela">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+body{
+    height: 100vh;
+    background: rgb(94,136,242);
+    background: linear-gradient(0deg, rgba(94,136,242,1) 4%, rgba(146,186,237,1) 47%, rgba(161,215,235,1) 100%);
+    overflow: hidden;
+}
+html{
+    height: 100vh;
+}
+.logo{
+    width: 100%;
+}
+.main{
+    width: 22vh;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.164) !important;
+    height: 9vh;
+
+}
+.active{
+    color: red !important;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: large;
+}
+    .active:hover{
+        color: blanchedalmond !important;
+    }
+.out{
+    text-decoration: none;
+    color: white !important;
+    transition: 0.5s;
+    font-size: large;
+}
+    .out:hover{
+        color: red !important;
+    }
+.area{
+    background-color: rgba(0, 0, 0, 0.164);
+    border: 2px solid black;
+    color: white;
+}
+    .area:focus{
+        background-color: rgba(0, 0, 0, 0.164);
+        color: white;
+    }
+    .area::after{
+        color: white;
+    }
+    .area::placeholder{
+        font-style: italic;
+        color: white;
+    }
+.jumbotron{
+    background-color: rgb(156, 0, 26);
+    color: white;
+}
+.validation{
+    color: black;
+    font-size: small;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+}
+.logo{
+    width: 7em !important;
+}

@@ -1,0 +1,65 @@
+body{
+    min-height: 100vh;
+    background: rgb(236,247,249);
+    background: linear-gradient(128deg, rgba(236,247,249,1) 0%, rgba(186,219,224,1) 100%);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.logo{
+    width: 100%;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.164) !important;
+    height: 9vh;
+
+}
+.active{
+    color: red !important;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: large;
+}
+    .active:hover{
+        color: blanchedalmond !important;
+    }
+.out{
+    text-decoration: none;
+    color: white !important;
+    transition: 0.5s;
+    font-size: large;
+    
+}
+    .out:hover{
+        color: red !important;
+    }
+.inst{
+    font-weight: 100;
+}
+.blackLine{
+    text-decoration: underline;
+}
+.opts{
+    font-size: large;
+    font-weight: 400;
+}
+.ex1{
+    background-color: black;
+    color: black;
+    transition: 1s;
+}
+    .ex1:hover{
+        background-color: transparent;
+    }
+.deckName{
+    color: rgb(131,58,180);
+}
+.btn{
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    transition: 0.3s;
+}
+.btn:hover{
+    background: rgb(131,58,180);
+    border: 2px solid black;
+}

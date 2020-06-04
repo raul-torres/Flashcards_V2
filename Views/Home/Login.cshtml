@@ -1,0 +1,36 @@
+@model LoginUser
+
+<link rel="stylesheet" href="~/css/Login.css" />
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/img/logo.png" alt="" class="logo">
+    </div>
+    <div class="col-md-4 varela">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 class="text-center">Welcome</h2>
+        <hr class="smallhr">
+        <div class="text-center">
+            <span>Or</span> <a href="/"> create an account</a>
+        </div>
+        <h4></h4>
+        <br>
+        <form action="/access" method="post">
+            <span asp-validation-for="LEmail" class="validations"></span>
+            <input asp-for="LEmail" class="form-control" placeholder="Email" value="olga@mail.com">
+            <br>
+            <span asp-validation-for="LPassword" class="validations"></span>
+            <input asp-for="LPassword" class="form-control" placeholder="Password" value="Q@123456789">
+            <br>
+            <div class="text-center">
+                <input type="submit" value="Sign In" class="btn btn-outline-primary">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

@@ -1,0 +1,40 @@
+body{
+    background-image: url("../img/login.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+html{
+  overflow: hidden;
+}
+
+.form-control{
+    outline: 0 !important;
+    border-width: 0 0 1px !important;
+    border-color: black !important;
+    background-color: transparent;
+  }
+  .form-control:focus{
+    border-color: black !important;
+    background-color: transparent;
+    color: black;
+  }
+.smallhr{
+    width: 20%;
+    background-color: red;
+    height: 1px;
+}
+.logo{
+    height: 14%;
+}
+.validations{
+  color: red;
+  font-size: small;
+}
+@media only screen and (max-width: 600px) {
+  .logo{
+    height: 50%;
+  }
+}

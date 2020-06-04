@@ -1,0 +1,79 @@
+body{
+    height:100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+html{
+    height:100vh
+}
+.top{
+    background-image:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../img/redt.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 45vh;
+    background-color: gray;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+.bottom{
+    height: 60vh;
+}
+a{
+    font-size: large;
+}
+.desc{
+    font-size: large;
+}
+.logo{
+    width: 10%;
+}
+.out{
+    margin-right: 1%;
+}
+.btn-outline-danger{
+    color: white !important;
+    border: 1px solid white !important;
+}
+.btn-outline-danger:focus{
+    border: 1px solid rgb(112, 5, 5) !important;
+}
+.icon{
+    width: 50%;
+}
+.icon1{
+    width: 40%;
+
+}
+.thisbtn:focus{
+    background-color: transparent !important;
+    border: 2px solid red !important;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.164);
+    height: 9vh;
+
+}
+.out{
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+.out:hover{
+    color: #6C63FF !important;
+}
+.color{
+    color: #6C63FF;
+}
+@media only screen and (max-width: 600px){
+    .logo{
+        width: 32%;
+    }
+    .mainBody{
+        overflow-x: hidden;
+    }
+    .end{
+        margin-bottom: 10em;
+    }
+}

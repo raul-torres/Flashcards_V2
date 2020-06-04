@@ -1,0 +1,51 @@
+@model Card
+<link rel="stylesheet" href="~/css/EditCard.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light varela">
+    <a class="main out nav-link" href="/home">
+      <img src="~/img/whiteLogo.png" alt="" class="logo">
+    </a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="out nav-link" href="/newdeck">New Deck</a>
+      </li>
+      <li class="nav-item">
+        <a class="active nav-link" href="/alldecks">My Decks</a>
+      </li>
+      <li class="nav-item">
+        <a class="out nav-link" href="/quiz">Quiz</a>
+      </li>
+      <li class="nav-item active">
+        <a class="out nav-link" href="/everysingledeck">Other Decks</a>
+      </li>
+    </ul>
+    <a href="/logout" class="text-right out">Sign Out</a>
+    @*  <span class="sr-only">(current)</span> *@
+</nav>
+
+<br>
+<br>
+<div class="row varela">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Lets Edit this Card</h1>
+            <br>
+            <form action="/savecardchanges/@Model.CardId" method="post">
+                <span class="validation" asp-validation-for="Question"></span>
+                <input name="Question" class="form-control area" placeholder="Question" value="@Model.Question">
+                <br>
+                <span class="validation" asp-validation-for="Answer"></span>
+                <input name="Answer" class="form-control area" placeholder="Answer" value="@Model.Answer">
+                <br>
+                <p class="text-center">
+                    <input type="submit" value="Save Changes" class="btn btn-primary">
+                    &nbsp;
+                    &nbsp;
+                    <a href="/allcards/@Model.DeckSlot.DeckId" class="btn btn-warning">Cancel</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>

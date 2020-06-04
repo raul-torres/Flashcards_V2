@@ -1,0 +1,47 @@
+@model Card
+<link rel="stylesheet" href="~/css/NewCard.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="~/img/whiteLogo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/newdeck">New Deck <span class="sr-only">(current)</span></a>
+      <a class="text-light nav-item nav-link" href="/alldecks">My Decks</a>
+      <a class="text-light nav-item nav-link" href="/quiz">Quiz</a>
+      <a class="text-light nav-item nav-link" href="/everysingledeck">Other Decks</a>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<div class="row varela">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Lets add a New Card</h1>
+            <br>
+            <form action="/card/@ViewBag.ThisDeck" method="post">
+                <span class="validation" asp-validation-for="Question"></span>
+                <input asp-for="Question" class="form-control area" placeholder="Question">
+                <br>
+                <span class="validation" asp-validation-for="Answer"></span>
+                <input asp-for="Answer" class="form-control area" placeholder="Answer">
+                <input type="hidden" aps-for="DeckId" value="@ViewBag.ThisDeck">
+                <br>
+                <p class="text-center">
+                    <input type="submit" value="Add Card" class="btn btn-primary">
+                    &nbsp;
+                    &nbsp;
+                    <a href="/allcards/@ViewBag.ThisDeck" class="btn btn-warning">Go Back</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
