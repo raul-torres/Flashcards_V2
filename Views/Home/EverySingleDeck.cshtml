@@ -20,8 +20,17 @@
   </div>
 </nav>
 
-<div class="mainBody">
+<div class="varela mainBody">
+  <h1 class="title display-4 text-center">Created Decks</h1>
+  <hr class="smallhr">
   @{
+    if(Model.Count == 0)
+    {
+      <div class="text-center">
+        <p class="alert">No Decks Have Been Created Yet</p>
+        <a href="/newdeck" class="btn btn-outline-primary">Create New Deck</a>
+      </div>
+    }
     foreach(Deck D in Model)
     {
       if(D.UserId == ViewBag.CurrentUser)

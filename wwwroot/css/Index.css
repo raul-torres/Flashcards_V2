@@ -7,12 +7,13 @@ body{
 }
 html{
     height:100vh;
+    scroll-behavior: smooth;
 }
 
 .leftSection{
     /* background: linear-gradient(0deg, rgb(7, 2, 109) 4%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 100%); */
     background-color: rgb(156, 0, 26);
-    height:92vh;
+    height:95vh;
     margin-top: 3vh;
     margin-left: 5vh;
     color: white;
@@ -49,6 +50,25 @@ input::placeholder{
 }
 .color{
     color: #6C63FF;
+}
+.smooth{
+    color: white;
+    text-decoration: none;
+    font-size: x-large;
+    display: block;
+}
+.downArrow{
+    display: block;
+    width: 10%;
+    margin-left: 46%;
+}
+@media only screen and (min-width: 600px){
+    .smooth{
+        display: none;
+    }
+    .downArrow{
+        display: none;
+    }
 }
 @media only screen and (max-width: 600px){
     .controlBody{

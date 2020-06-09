@@ -17,10 +17,14 @@
             <br>
             <br>
             <p class="about varela">My Flash Cards is a modern web application used to study any material using flash cards. Take a moment to create and account and join our ever growing community.</p>
+            <div class="text-center">
+                <a href="#section2" class="smooth">Get Started</a>
+                <img src="~/img/downArrow.png" alt="Down Arrow" class="downArrow">
+            </div>
         </div>
         <div class="col-md-1">
         </div>
-        <div class="col-md-3 rightSide">
+        <div class="col-md-3 rightSide" id="section2">
             <br>
             <br>
             <br>
@@ -39,7 +43,7 @@
                 <input type="text" class="form-control" placeholder="Last Name" asp-for="LastName">
                 <br>
                 <span asp-validation-for="Email" class="validations varela"></span>
-                <input type="email" class="form-control" placeholder="Email" asp-for="Email">
+                <input type="email" class="form-control" placeholder="User Name" asp-for="Email">
                 <br>
                 <span asp-validation-for="Password" class="validations varela"></span>
                 <input type="password" class="form-control" placeholder="Password" asp-for="Password">

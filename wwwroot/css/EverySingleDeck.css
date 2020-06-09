@@ -69,6 +69,18 @@ body{
 .logo{
     width: 7em !important;
 }
+.alert{
+    margin-top: 5%;
+    font-size: x-large;
+}
+.title{
+    margin-top: 1em;
+}
+.smallhr{
+    width: 19%;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
 @media only screen and (max-width: 600px){
     .rec{
         width: 100%;

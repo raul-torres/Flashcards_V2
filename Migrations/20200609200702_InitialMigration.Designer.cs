@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Flashcard2.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20200522210528_initialMigration")]
-    partial class initialMigration
+    [Migration("20200609200702_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
