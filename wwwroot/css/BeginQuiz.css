@@ -5,33 +5,6 @@ body{
     overflow: scroll;
     overflow-x: hidden;
 }
-.logo{
-    width: 100%;
-}
-.navbar{
-    background-color: rgba(0, 0, 0, 0.164) !important;
-    height: 9vh;
-
-}
-.active{
-    color: red !important;
-    text-decoration: none;
-    transition: 0.5s;
-    font-size: large;
-}
-    .active:hover{
-        color: blanchedalmond !important;
-    }
-.out{
-    text-decoration: none;
-    color: white !important;
-    transition: 0.5s;
-    font-size: large;
-    
-}
-    .out:hover{
-        color: red !important;
-    }
 .mainCol{
     margin-top: 10vh;
 }
@@ -43,13 +16,12 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    color: white;
     border: 2px solid black;
+    background-color: darkred;
 }
 .ThisCard{
     display: inline-block;
     margin-top: 5%;
-    margin-left: 8%;
     overflow-y: auto;
     transition: 0.4s ease-out;
     position: relative;
@@ -74,7 +46,7 @@ body{
 .response{
     font-family: 'Open Sans Condensed';
     font-size: 18px;
-    margin-left: 10%;
+    color: white;
 }
 .blackLine{
     background-color: black;
@@ -91,4 +63,22 @@ body{
 }
 .opts{
     width: 8vh;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 3em;
+}
+.logo{
+    width: 7em !important;
+}
+.mainBody{
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 768px){
+    .ThisCard{
+        margin-left: 0;
+    }
+    .navbar{
+        height: auto;
+    }
 }

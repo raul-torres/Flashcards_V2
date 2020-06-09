@@ -424,19 +424,115 @@ namespace Flashcard2.Controllers
             {
                 return RedirectToAction("Login");
             }
-            Deck ThisDeck = dbContext.Decks
-                .Include(Fl => Fl.Flashcards)
-                .FirstOrDefault(D => D.DeckId == IdDeck);
+            HttpContext.Session.Remove("ViewedCards");
+            List<Card> AllCards = dbContext.Cards
+                .Where(D => D.DeckId == IdDeck)
+                .ToList();
+            int NumCards = AllCards.Count();
             Random random = new Random();
-            int AllCards = ThisDeck.Flashcards.Count();
-            int RanCard = random.Next(1, AllCards);
-            return View();
+            int RanNumber = random.Next(0, NumCards);
+            Card ThisCard = AllCards[RanNumber];
+            HttpContext.Session.SetString("ViewedCards", RanNumber.ToString());
+
+            string CorrectCards = HttpContext.Session.GetString("ViewedCards");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~CORRECT CARDS~~~~~~~~~~~~~~~~~~~~~~~"+ CorrectCards);
+
+            return View(ThisCard);
         }
-    // HANDLING TESTING AREA (GET)
-        [HttpGet("test")]
-        public IActionResult Test()
+    // HANDLING CORRECT GUESS (GET)
+        [HttpGet("gssdr/{IdDeck}")]
+        public IActionResult gssdr(int IdDeck)
         {
-            return View();
+            int? Session = HttpContext.Session.GetInt32("UserInSession");
+            if(Session == null)
+            {
+                return RedirectToAction("Login");
+            }
+            List<Card> AllCards = dbContext.Cards
+                .Where(D => D.DeckId == IdDeck)
+                .ToList();
+            int NumCards = AllCards.Count();
+            Random random = new Random();
+            int RanNumber = random.Next(0, NumCards);
+            string CorrectCards = HttpContext.Session.GetString("ViewedCards");
+            // If statement checking to see if all cards have been used
+            if(AllCards.Count() == CorrectCards.Length)
+            {
+                return RedirectToAction("Home");
+            }
+            // While loop checking to see if random number ID has already been used
+            int i = 0;
+            while(i < CorrectCards.Length)
+            {  
+                Console.WriteLine("~~~~~~~~~~~~~~~~~I is currently " + i);
+                // I want to check to see if the index on the card list has already been used
+                Console.WriteLine("RIGHT GUESS");
+                Console.WriteLine("~~~~~~~~~~~~~~~~~RANDOM NUMBER SELECTED~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + RanNumber.GetType());
+                Console.WriteLine("~~~~~~~~~~~~~~~~~CORRECTCARDS[I]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + CorrectCards[i].GetType());
+                if(RanNumber.ToString() == CorrectCards[i].ToString())
+                {
+                    RanNumber = random.Next(0, NumCards);
+                    i = 0;
+                } else {
+                    i++;
+                }
+            }
+            CorrectCards += RanNumber.ToString();
+            HttpContext.Session.SetString("ViewedCards", CorrectCards);
+            Card ThisCard = AllCards[RanNumber];
+
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~CORRECT CARDS~~~~~~~~~~~~~~~~~~~~~~~~~~~"+ CorrectCards);
+
+            return View("BeginQuiz", ThisCard);
         }
+    // HANDLING INCORRECT GUESS (GET)
+        [HttpGet("gssdw/{IdDeck}")]
+        public IActionResult gssdw(int IdDeck)
+        {
+            int? Session = HttpContext.Session.GetInt32("UserInSession");
+            if(Session == null)
+            {
+                return RedirectToAction("Login");
+            }
+            List<Card> AllCards = dbContext.Cards
+                .Where(D => D.DeckId == IdDeck)
+                .ToList();
+            int NumCards = AllCards.Count();
+            Random random = new Random();
+            int RanNumber = random.Next(0, NumCards);
+            string CorrectCards = HttpContext.Session.GetString("ViewedCards");
+            CorrectCards = CorrectCards.Remove(CorrectCards.Length - 1);
+            // If statement checking to see if all cards have been used
+            if(AllCards.Count() == CorrectCards.Length)
+            {
+                return RedirectToAction("Home");
+            }
+            // While loop checking to see if random number ID has already been used
+            int i = 0;
+            while(i < CorrectCards.Length)
+            {   
+                Console.WriteLine("~~~~~~~~~~~~~~~~~I is currently " + i);
+                // I want to check to see if the index on the card list has already been used
+                Console.WriteLine("WRONG GUESS");
+                Console.WriteLine("~~~~~~~~~~~~~~~~~RANDOM NUMBER SELECTED~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + RanNumber.GetType());
+                Console.WriteLine("~~~~~~~~~~~~~~~~~CORRECTCARDS[I]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + CorrectCards[i].GetType());
+
+                if(RanNumber.ToString() == CorrectCards[i].ToString())
+                {
+                    RanNumber = random.Next(0, NumCards);
+                    i = 0;
+                } else {
+                    i++;
+                }
+            }
+            CorrectCards += RanNumber.ToString();
+            HttpContext.Session.SetString("ViewedCards", CorrectCards);
+            Card ThisCard = AllCards[RanNumber];
+
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~CORRECT CARDS~~~~~~~~~~~~~~~~~~~~~~~~~~~"+ CorrectCards);
+
+            return View("BeginQuiz", ThisCard);  
+        }
+        // HELLO FUTURE RAUL THERE IS STILL AN ISSUE WITH THE ALGO. SOME OF THE CARDS REPEAT EVEN IF THEY HAVE BEEN LABELED RIGHT OR WRONG. ALSO SOMETIMES NOT ALL THE CARDS ARE DISPLAYED TO THE USER. FIX IT!!!
     }
 }

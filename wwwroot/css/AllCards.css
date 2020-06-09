@@ -2,45 +2,10 @@ body{
     min-height: 100vh;
     background: rgb(94,136,242);
     background: linear-gradient(0deg, rgba(94,136,242,1) 4%, rgba(146,186,237,1) 47%, rgba(161,215,235,1) 100%);
-    overflow: scroll;
-    overflow-x: hidden;
 }
-.logo{
-    width: 100%;
-}
-.navbar{
-    background-color: rgba(0, 0, 0, 0.164) !important;
-    height: 9vh;
-
-}
-.active{
-    color: red !important;
-    text-decoration: none;
-    transition: 0.5s;
-    font-size: large;
-}
-    .active:hover{
-        color: blanchedalmond !important;
-    }
-.out{
-    text-decoration: none;
-    color: white !important;
-    transition: 0.5s;
-    font-size: large;
-}
-    .out:hover{
-        color: red !important;
-    }
 .main{
     width: 22vh;
 }
-    a.navbar-brand {
-        white-space: normal;
-        text-align: center;
-        word-break: break-all;
-        width: 50%;
-      }
-    
     .menupic{
         width: 16%;
       }
@@ -137,4 +102,19 @@ body{
 } 
 .backbtn:hover{
     color: white;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 3em;
+}
+.logo{
+    width: 7em !important;
+}
+.mainBody{
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 768px){
+    .navbar{
+        height: auto;
+    }
 }

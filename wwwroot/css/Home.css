@@ -51,9 +51,8 @@ a{
     border: 2px solid red !important;
 }
 .navbar{
-    background-color: rgba(0, 0, 0, 0.164);
-    height: 9vh;
-
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 4em;
 }
 .out{
     text-decoration: none;

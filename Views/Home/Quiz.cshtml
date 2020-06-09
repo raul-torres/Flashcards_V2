@@ -4,26 +4,24 @@
 <link rel="stylesheet" href="~/css/Quiz.css">
 
 @* PAGE NAVBAR *@
-<nav class="navbar navbar-expand-lg navbar-light bg-light varela">
-    <a class="main out nav-link" href="/home">
-      <img src="~/img/whiteLogo.png" alt="" class="logo">
-    </a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="out nav-link" href="/newdeck">New Deck</a>
-      </li>
-      <li class="nav-item">
-        <a class="out nav-link" href="/alldecks">My Decks</a>
-      </li>
-      <li class="nav-item">
-        <a class="active nav-link" href="/quiz">Quiz</a>
-      </li>
-      <li class="nav-item active">
-        <a class="out nav-link" href="/everysingledeck">Other Decks</a>
-      </li>
-    </ul>
-    <a href="/logout" class="text-right out">Sign Out</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="~/img/whiteLogo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="text-light nav-item nav-link" href="/newdeck">New Deck</a>
+      <a class="text-light nav-item nav-link" href="/alldecks">My Decks</a>
+      <a class="nav-item nav-link active" href="/quiz">Quiz <span class="sr-only">(current)</span></a>
+      <a class="text-light nav-item nav-link" href="/everysingledeck">Other Decks</a>
+      <a class="text-danger nav-item nav-link" href="/logout">Sign Out</a>
+    </div>
+  </div>
 </nav>
+
 
 @* PAGE HEADING *@
 <div class="varela">
@@ -33,24 +31,65 @@
 </div>
 
 <br>
-
-@* SHOWING ALL DECKS CREATED BY USER OR FAVORITE BY USER *@
-@{
-    foreach(Deck D in Model)
-    {
-        bool isFav = false;
-        foreach(var y in D.FavoriteBy)
+<div class="mainBody">
+    @* SHOWING ALL DECKS CREATED BY USER OR FAVORITE BY USER *@
+    @{
+        foreach(Deck D in Model)
         {
-            if(y.UserId == ViewBag.User)
+            bool isFav = false;
+            foreach(var y in D.FavoriteBy)
             {
-                isFav = true;
+                if(y.UserId == ViewBag.User)
+                {
+                    isFav = true;
+                }
+                if(isFav == true)
+                {
+                    <div class="mainBody">
+                        
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row varela">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-9">
+                        <a href="/usedeck/@D.DeckId" class="box">
+                            <div class="rec">
+                                <p class="name">@D.DeckName</p>
+                                &nbsp;&nbsp;&nbsp;
+                                <p class="creator">By, @D.Creator.FirstName @D.Creator.LastName</p>
+                                <span class="float-right count">@D.Flashcards.Count Cards</span>
+                                @{
+                                bool Fav = false;
+                                foreach(var z in D.FavoriteBy)
+                                {
+                                    if(z.UserId == ViewBag.CurrentUser)
+                                    {
+                                        Fav = true;
+                                    }
+                                }
+                                if(Fav == true)
+                                {
+                                    <img src="~/img/star.png" alt="Star" class="star">
+                                }
+                                }
+                                @if(@D.Description == null)
+                                {
+                                <p class="desc">No Description Avaliable</p>
+                                }
+                                <p class="desc">@D.Description</p>
+                            </div>
+                        </a> 
+                        </div>
+                    </div>
+                }
             }
-            if(isFav == true)
+            if(D.UserId == ViewBag.User)
             {
                 <br>
                 <br>
                 <div class="row varela">
-                    <div class="col-md-3"></div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-9">
                     <a href="/usedeck/@D.DeckId" class="box">
                         <div class="rec">
@@ -58,20 +97,6 @@
                             &nbsp;&nbsp;&nbsp;
                             <p class="creator">By, @D.Creator.FirstName @D.Creator.LastName</p>
                             <span class="float-right count">@D.Flashcards.Count Cards</span>
-                            @{
-                            bool Fav = false;
-                            foreach(var z in D.FavoriteBy)
-                            {
-                                if(z.UserId == ViewBag.CurrentUser)
-                                {
-                                    Fav = true;
-                                }
-                            }
-                            if(Fav == true)
-                            {
-                                <img src="~/img/star.png" alt="Star" class="star">
-                            }
-                            }
                             @if(@D.Description == null)
                             {
                             <p class="desc">No Description Avaliable</p>
@@ -83,28 +108,6 @@
                 </div>
             }
         }
-        if(D.UserId == ViewBag.User)
-        {
-            <br>
-            <br>
-            <div class="row varela">
-                <div class="col-md-3"></div>
-                <div class="col-md-9">
-                <a href="/usedeck/@D.DeckId" class="box">
-                    <div class="rec">
-                        <p class="name">@D.DeckName</p>
-                        &nbsp;&nbsp;&nbsp;
-                        <p class="creator">By, @D.Creator.FirstName @D.Creator.LastName</p>
-                        <span class="float-right count">@D.Flashcards.Count Cards</span>
-                        @if(@D.Description == null)
-                        {
-                        <p class="desc">No Description Avaliable</p>
-                        }
-                        <p class="desc">@D.Description</p>
-                    </div>
-                </a> 
-                </div>
-            </div>
-        }
     }
-}
+
+</div>

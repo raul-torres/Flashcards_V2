@@ -4,57 +4,58 @@
 <link rel="stylesheet" href="~/css/UseDeck.css">
 
 @* PAGE NAVBAR *@
-<nav class="navbar navbar-expand-lg navbar-light bg-light varela">
-    <a class="main out nav-link" href="/home">
-      <img src="~/img/whiteLogo.png" alt="" class="logo">
-    </a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="out nav-link" href="/newdeck">New Deck</a>
-      </li>
-      <li class="nav-item">
-        <a class="out nav-link" href="/alldecks">My Decks</a>
-      </li>
-      <li class="nav-item">
-        <a class="active nav-link" href="/quiz">Quiz</a>
-      </li>
-      <li class="nav-item active">
-        <a class="out nav-link" href="/everysingledeck">Other Decks</a>
-      </li>
-    </ul>
-    <a href="/logout" class="text-right out">Sign Out</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="~/img/whiteLogo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="text-light nav-item nav-link" href="/newdeck">New Deck</a>
+      <a class="text-light nav-item nav-link" href="/alldecks">My Decks</a>
+      <a class="nav-item nav-link active" href="/quiz">Quiz <span class="sr-only">(current)</span></a>
+      <a class="text-light nav-item nav-link" href="/everysingledeck">Other Decks</a>
+      <a class="text-danger nav-item nav-link" href="/logout">Sign Out</a>
+    </div>
+  </div>
 </nav>
 
-@* DECK NAME *@
-<div class="varela">
-    <br>
-    <h1 class="text-center display-3">Quiz with <span class="deckName">@Model.DeckName</span></h1>
-</div>
+<div class="mainBody">
+  @* DECK NAME *@
+  <div class="varela">
+      <br>
+      <h1 class="text-center display-3">Quiz with <span class="deckName">@Model.DeckName</span></h1>
+  </div>
 
-@* RULES *@
-<div class="varela">
-    <br>
-    <h1 class="inst text-center">You will see 1 card appear at a time</h1>
-    <br>
-    <br>
-    <h1 class="inst text-center">Hover over the <span class="blackLine">black line</span> with your mouse to see the answer</h1>
-    <h1 class="text-center ex1">Good Job!</h1>
-    <br>
-    <br>
+  @* RULES *@
+  <div class="varela">
+      <br>
+      <h1 class="inst text-center">You will see 1 card appear at a time</h1>
+      <br>
+      <br>
+      <h1 class="inst text-center">Hover over the <span class="blackLine">black line</span> with your mouse <br><span class="mobileAlert">(tap black line if on mobile)</span><br> to see the answer</h1>
+      <h1 class="text-center ex1">Good Job!</h1>
+      <br>
+      <br>
 
-    @* ICONS *@
-    <p class="opts text-center">Once you have guessed make a selection to continue</p>
-    <div class="row">
-        <div class="col-md-6">
-            <p class="opts text-center"><img src="~/img/up.png" alt="Thumbs Up"> you guessed correctly</p>
-        </div>
-        <div class="col-md-6">
-            <p class="opts text-center"><img src="~/img/down.png" alt="Thumbs Up"> your guess was incorrect</p>
-        </div>
-    </div>
+      @* ICONS *@
+      <p class="opts text-center">Once you have guessed make a selection to continue</p>
+      <div class="row">
+          <div class="col-md-6">
+              <p class="opts text-center"><img src="~/img/up.png" alt="Thumbs Up"> you guessed correctly</p>
+          </div>
+          <div class="col-md-6">
+              <p class="opts text-center"><img src="~/img/down.png" alt="Thumbs Up"> your guess was incorrect</p>
+          </div>
+      </div>
+      <br>
+      <br>
 
-    @* BEGIN BUTTON *@
-    <p class="text-center">
-        <a href="/beginquiz/@Model.DeckId" class="btn btn-outline-primary btn-lg">Begin!</a>
-    </p>
+      @* BEGIN BUTTON *@
+      <p class="text-center">
+          <a href="/beginquiz/@Model.DeckId" class="btn btn-outline-primary btn-lg">Begin!</a>
+      </p>
+  </div>
 </div>

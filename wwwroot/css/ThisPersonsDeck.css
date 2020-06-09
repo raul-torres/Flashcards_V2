@@ -1,44 +1,12 @@
-body{
+html, body{
     height: 95vh;
     background-color: #BFDEE3;
     /* background: rgb(94,136,242);
     background: linear-gradient(0deg, rgba(94,136,242,1) 4%, rgba(146,186,237,1) 47%, rgba(161,215,235,1) 100%); */
-    overflow: hidden;
     color: black;
-}
-html{
-    height: 100vh;
+    overflow-x: hidden;
 }
 
-.logo{
-    width: 100%;
-}
-.navbar{
-    background-color: rgba(0, 0, 0, 0.164) !important;
-    height: 9vh;
-
-}
-.active{
-    color: red !important;
-    text-decoration: none;
-    transition: 0.5s;
-    font-size: large;
-}
-    .active:hover{
-        color: blanchedalmond !important;
-    }
-.out{
-    text-decoration: none;
-    color: white !important;
-    transition: 0.5s;
-    font-size: large;
-}
-    .out:hover{
-        color: red !important;
-    }
-.main{
-    width: 22vh;
-}
 .desc{
     font-size: x-large;
     font-weight: 200;
@@ -57,8 +25,8 @@ html{
 .menu{
     background: rgb(156,0,26);
     background: linear-gradient(90deg, rgba(156,0,26,1) 0%, rgba(101,12,26,1) 100%);
-    height: 50vh;
-    width: 70vh;
+    height: 83%;
+    width: 90%;
     transition: 0.8s;
     border-radius: 7px;
 }
@@ -92,4 +60,23 @@ html{
     }
 .star{
     width: 5vh;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 3em;
+}
+.logo{
+    width: 7em !important;
+}
+.mainBody{
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 768px){
+    .navbar{
+        height: auto;
+    }
+    .menu{
+        width: 100%;
+        margin-bottom: 25%;
+    }
 }

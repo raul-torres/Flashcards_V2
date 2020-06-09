@@ -3,7 +3,6 @@ body{
     background-color: #BFDEE3;
     /* background: rgb(94,136,242);
     background: linear-gradient(0deg, rgba(94,136,242,1) 4%, rgba(146,186,237,1) 47%, rgba(161,215,235,1) 100%); */
-    overflow: hidden;
     color: black;
 }
 .main{
@@ -27,7 +26,7 @@ body{
 .menu{
     background: rgb(156,0,26);
     background: linear-gradient(90deg, rgba(156,0,26,1) 0%, rgba(101,12,26,1) 100%);
-    height: 50vh;
+    height: 83%;
     width: 90%;
     transition: 0.8s;
     border-radius: 7px;
@@ -91,5 +90,6 @@ body{
     }
     .menu{
         width: 100%;
+        margin-bottom: 25%;
     }
 }

@@ -1,48 +1,47 @@
+@model Card
+
 @* TECHNOLOGIES USED BY VIEW *@
 <link rel="stylesheet" href="~/css/BeginQuiz.css">
 
 @* PAGE NAVBAR *@
-<nav class="navbar navbar-expand-lg navbar-light bg-light varela">
-    <a class="main out nav-link" href="/home">
-      <img src="~/img/whiteLogo.png" alt="" class="logo">
-    </a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="out nav-link" href="/newdeck">New Deck</a>
-      </li>
-      <li class="nav-item">
-        <a class="out nav-link" href="/alldecks">My Decks</a>
-      </li>
-      <li class="nav-item">
-        <a class="active nav-link" href="/quiz">Quiz</a>
-      </li>
-      <li class="nav-item active">
-        <a class="out nav-link" href="/everysingledeck">Other Decks</a>
-      </li>
-    </ul>
-    <a href="/logout" class="text-right out">Sign Out</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="~/img/whiteLogo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="text-light nav-item nav-link" href="/newdeck">New Deck</a>
+      <a class="text-light nav-item nav-link" href="/alldecks">My Decks</a>
+      <a class="nav-item nav-link active" href="/quiz">Quiz <span class="sr-only">(current)</span></a>
+      <a class="text-light nav-item nav-link" href="/everysingledeck">Other Decks</a>
+      <a class="text-danger nav-item nav-link" href="/logout">Sign Out</a>
+    </div>
+  </div>
 </nav>
 
-<div class="varela">
+<div class="mainBody varela">
     <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-lg-4"></div>
 
         @* SHOWING A CARD *@
-        <div class="mainCol col-md-4 text-center">
+        <div class="mainCol col-lg-4 text-center">
             <div class="jumbotron ThisCard">
                 <p class="marQues field">QUESTION:</p>
-                <p class="response">lbfjblsample</p>
+                <p class="response">@Model.Question</p>
                 <p class="field">ANSWER:</p>
-                <p class="response blackLine">jbdshklhbvsample</p>
+                <p class="response blackLine">@Model.Answer</p>
                 <br>
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="#">
+                        <a href="/gssdr/@Model.DeckId">
                             <img src="~/img/up.png" alt="Thumbs Up" class="opts">
                         </a>
                     </div>
                     <div class="col-sm-6">
-                        <a href="#">
+                        <a href="/gssdw/@Model.DeckId">
                             <img src="~/img/down.png" alt="Thumbs Down" class="opts">
                         </a>
                     </div>
@@ -51,7 +50,7 @@
         </div>
 
 
-        <div class="col-md-4"></div>
+        <div class="col-lg-4"></div>
     </div>
 </div>
 

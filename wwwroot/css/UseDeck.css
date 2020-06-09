@@ -5,33 +5,6 @@ body{
     overflow: scroll;
     overflow-x: hidden;
 }
-.logo{
-    width: 100%;
-}
-.navbar{
-    background-color: rgba(0, 0, 0, 0.164) !important;
-    height: 9vh;
-
-}
-.active{
-    color: red !important;
-    text-decoration: none;
-    transition: 0.5s;
-    font-size: large;
-}
-    .active:hover{
-        color: blanchedalmond !important;
-    }
-.out{
-    text-decoration: none;
-    color: white !important;
-    transition: 0.5s;
-    font-size: large;
-    
-}
-    .out:hover{
-        color: red !important;
-    }
 .inst{
     font-weight: 100;
 }
@@ -62,4 +35,22 @@ body{
 .btn:hover{
     background: rgb(131,58,180);
     border: 2px solid black;
+}
+.navbar{
+    background-color: rgba(0, 0, 0, 0.442) !important;
+    height: 3em;
+}
+.logo{
+    width: 7em !important;
+}
+.mainBody{
+    overflow-x: hidden;
+}
+.mobileAlert{
+    font-style: italic;
+}
+@media only screen and (max-width: 768px){
+    .navbar{
+        height: auto;
+    }
 }
